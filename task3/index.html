@@ -21,32 +21,67 @@
         <li><a href="../task5/index.html">Задание 6.8.6 — Перехват формы</a></li>
     </ul>
     <hr><br>
-    <div style="width: 300px;">
-        <p style="float: right; margin-top: 30px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"style="height: 32px;"><path d="M447.984 256.008C447.984 269.258 437.234 280.008 423.984 280.008H83.895L216.562 406.633C226.187 415.789 226.531 431.039 217.375 440.57C208.219 450.164 193.031 450.508 183.437 441.383L7.437 273.383C2.688 268.852 0 262.57 0 256.008S2.688 243.164 7.438 238.633L183.438 70.633C193.031 61.508 208.219 61.852 217.375 71.445C226.531 80.945 226.188 96.195 216.563 105.383L83.895 232.008H423.984C437.234 232.008 447.984 242.758 447.984 256.008Z"/></svg> надо нажать в круг</p>
-        <div id="trafficLight"></div>
+    <p style="color: rgb(243, 158, 0); font-weight: 600;">В данном случае я очень захотел сделать 2 светофора. В одном я сделал так чтобы переход осуществлялся с помощью клика на круг. А во втором варианте я решил использовать ранее полученный в материалах метод задержки taimer, чтобы переход происходил автоматически через какой то промежуток времени.</p><br>
+    <div class="traffics">
+        <fieldset class="manual"><legend>Переход с помощью клика</legend>
+            <div class="svetoforOne">
+                <div id="trafficLight"></div>
+                <div id="trafficLight"></div>
+                <div id="trafficLight"></div>
+            </div>
+            <fieldset><legend>JS</legend>
+                <p>const trafficLightEl = document.querySelector('#trafficLight');</p>
+                <p>trafficLightEl.addEventListener('click', makeGreen);</p>
+                <br>
+                <p>function makeGreen() {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background = ('green');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeGreen);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeYellow);</p>
+                <p>}</p>
+                <br>
+                <p>function makeYellow(){</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('yellow');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeYellow);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeRed);</p>
+                <p>}</p>
+                <br>
+                <p>function makeRed(){</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('red');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeRed);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeGreen);</p>
+                <p>}</p>
+            </fieldset>
+        </fieldset>
+        <fieldset class="auto"><legend>Переход автоматически по таймеру</legend>
+            <div class="svetoforTwo">
+                <div id="trafficGreen"></div>
+                <div id="trafficYello"></div>
+                <div id="trafficRed"></div>
+            </div>
+            <fieldset><legend>JS</legend>
+                <p>const trafficLightEl = document.querySelector('#trafficLight');</p>
+                <p>trafficLightEl.addEventListener('click', makeGreen);</p>
+                <br>
+                <p>function makeGreen() {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background = ('green');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeGreen);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeYellow);</p>
+                <p>}</p>
+                <br>
+                <p>function makeYellow(){</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('yellow');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeYellow);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeRed);</p>
+                <p>}</p>
+                <br>
+                <p>function makeRed(){</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('red');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeRed);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeGreen);</p>
+                <p>}</p>
+            </fieldset>
+        </fieldset>
     </div>
-    <fieldset><legend>JS</legend>
-        <p>const trafficLightEl = document.querySelector('#trafficLight');</p>
-        <p>trafficLightEl.addEventListener('click', makeGreen);</p>
-        <br>
-        <p>function makeGreen() {</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background = ('green');</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeGreen);</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeYellow);</p>
-        <p>}</p>
-        <br>
-        <p>function makeYellow(){</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('yellow');</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeYellow);</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeRed);</p>
-        <p>}</p>
-        <br>
-        <p>function makeRed(){</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('red');</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeRed);</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeGreen);</p>
-        <p>}</p>
-    </fieldset>
     <script src="script.js"></script>
 </body>
 </html>

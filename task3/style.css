@@ -1,6 +1,31 @@
-#trafficLight {
-    width: 100px;
-    height: 100px;
+.traffics div div {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: black;
+    margin: 10px;
+}
+.traffics {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.traffics fieldset {
+    max-height: 400px !important;
+    width: 50%;
+}
+.traffics fieldset {
+    display: flex;
+    position: relative;
+}
+.traffics fieldset div {top: 25px;position: relative;}
+.traffics fieldset fieldset {
+    display: block;
+    width: 100%;
+}
+.traffics fieldset:first-child {
+    margin-right: 10px;
+}
+.traffics fieldset:last-child {
+    margin-left: 10px;
 }

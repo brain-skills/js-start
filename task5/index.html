@@ -30,10 +30,22 @@
         </button>
     </form>
     <hr>
-    <p>Введенный текст:</p>
-    <p id="duplicateField"></p>
+    <p>Введенный текст: <span id="duplicateField"></span></p>
     <fieldset><legend>JS</legend>
-        <p>&nbsp;</p>
+        <p>const input = document.querySelector('input');</p>
+        <p>const duplicateField = document.querySelector('#duplicateField');</p>
+        <p>const button = document.querySelector('button');</p>
+        <br>
+        <p>input.addEventListener('input', function (e) {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;duplicateField.textContent = input.value;</p>
+        <p>});</p>
+        <br>
+        <p>button.addEventListener('click', (event) => {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;input.value = null;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Работает! Вы ввели: ', duplicateField.textContent);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;duplicateField.textContent = null;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;event.preventDefault();</p>
+        <p>});</p>
     </fieldset>
     <script src="script.js"></script>
 </body>
