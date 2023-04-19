@@ -5,6 +5,15 @@
     background: black;
     margin: 10px !important;
 }
+.traffics div .autoGreen.on {
+    background: green;
+}
+.traffics div .autoYellow.on {
+    background: yellow;
+}
+.traffics div .autoRed.on {
+    background: red;
+}
 .traffics {
     width: 100%;
     display: flex;

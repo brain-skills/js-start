@@ -24,60 +24,69 @@
     <p style="color: rgb(243, 158, 0); font-weight: 600;">В данном случае я очень захотел сделать 2 светофора. В одном я сделал так чтобы переход осуществлялся с помощью клика на круг. А во втором варианте я решил использовать ранее полученный в материалах метод задержки taimer, чтобы переход происходил автоматически через какой то промежуток времени.</p><br>
     <div class="traffics">
         <fieldset class="manual"><legend>Переход с помощью клика</legend>
-            <div class="svetoforOne">
-                <div id="trafficLight"></div>
-                <div id="trafficLight"></div>
-                <div id="trafficLight"></div>
+            <div class="manualTraffic">
+                <div id="manualGreen"></div>
+                <div id="manualYellow"></div>
+                <div id="manualRed"></div>
             </div>
             <fieldset><legend>JS</legend>
-                <p>const trafficLightEl = document.querySelector('#trafficLight');</p>
-                <p>trafficLightEl.addEventListener('click', makeGreen);</p>
+                <p>const manualGreen = document.querySelector('#manualGreen');</p>
+                <p>const manualYellow = document.querySelector('#manualYellow');</p>
+                <p>const manualRed = document.querySelector('#manualRed');</p>
                 <br>
-                <p>function makeGreen() {</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background = ('green');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeGreen);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeYellow);</p>
-                <p>}</p>
+                <p>function mBgGreen() {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('green');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('black');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('black');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.removeEventListener('click', mBgGreen);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.addEventListener('click', mBgYellow);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.addEventListener('click', mBgRed);</p>
+                    <p>}</p>
+                <p>manualGreen.addEventListener('click', mBgGreen);</p>
                 <br>
-                <p>function makeYellow(){</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('yellow');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeYellow);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeRed);</p>
+                <p>function mBgYellow(){</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('black');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('yellow');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('black');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.removeEventListener('click', mBgYellow);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.addEventListener('click', mBgRed);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.addEventListener('click', mBgGreen);</p>
                 <p>}</p>
+                <p>manualYellow.addEventListener('click', mBgYellow);</p>
                 <br>
-                <p>function makeRed(){</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('red');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeRed);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeGreen);</p>
+                <p>function mBgRed(){</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('black');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('black');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('red');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.removeEventListener('click', mBgRed);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.addEventListener('click', mBgGreen);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.addEventListener('click', mBgYellow);</p>
                 <p>}</p>
+                <p>manualRed.addEventListener('click', mBgRed);</p>
             </fieldset>
         </fieldset>
         <fieldset class="auto"><legend>Переход автоматически по таймеру</legend>
-            <div class="svetoforTwo">
-                <div id="trafficGreen"></div>
-                <div id="trafficYello"></div>
-                <div id="trafficRed"></div>
+            <div class="autoTraffic">
+                <div class="autoGreen"></div>
+                <div class="autoYellow"></div>
+                <div class="autoRed"></div>
             </div>
             <fieldset><legend>JS</legend>
-                <p>const trafficLightEl = document.querySelector('#trafficLight');</p>
-                <p>trafficLightEl.addEventListener('click', makeGreen);</p>
-                <br>
-                <p>function makeGreen() {</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background = ('green');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeGreen);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeYellow);</p>
-                <p>}</p>
-                <br>
-                <p>function makeYellow(){</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('yellow');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeYellow);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeRed);</p>
-                <p>}</p>
-                <br>
-                <p>function makeRed(){</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.style.background=('red');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.removeEventListener('click', makeRed);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;trafficLightEl.addEventListener('click', makeGreen);</p>
+                <p>var autoTraffic = document.querySelectorAll('.autoTraffic > div'), timers = [1500, 1500, 1500], counter = 0;</p>
+
+                <p>document.addEventListener('load', start);</p>
+
+                <p>var start = setTimeout(function() {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;traffic();</p>
+                <p>}, 100);</p>
+
+                <p>function traffic() {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;for (var i=0; i < autoTraffic.length; i++) {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoTraffic[i].classList.remove('on');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;autoTraffic[counter].classList.add('on');</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(traffic, timers[counter]);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;counter = (counter + 1) % timers.length;</p>
                 <p>}</p>
             </fieldset>
         </fieldset>
