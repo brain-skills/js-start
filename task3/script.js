@@ -41,7 +41,7 @@ manualRed.addEventListener('click', mBgRed);
 // ===========================================================================================
 
 var autoTraffic = document.querySelectorAll('.autoTraffic > div'), 
-	timers = [1500, 1500, 1500], counter = 0;
+	timers = [1000, 1000, 1000], counter = 0;
 
 document.addEventListener('load', start);
 
