@@ -21,53 +21,49 @@
         <li><a href="../task5/index.html">Задание 6.8.6 — Перехват формы</a></li>
     </ul>
     <hr><br>
-    <p style="color: rgb(19, 167, 0); font-weight: 600;">В данном задании я очень хотел сделать два разных по функционалу светофора.</p>
-    <p style="color: rgb(19, 167, 0); font-weight: 600;">1) вариант, я сделал так чтобы переход осуществлялся с помощью клика с одного на другой кружок.</p>
-    <p style="color: rgb(19, 167, 0); font-weight: 600;">2) вариант, я сделал так чтобы переход происходил автоматически через какой то промежуток времени. Сделал его по <a href="https://stackblitz.com/edit/traffic-light-in-vanilla-javascript?file=index.js" target="_blank">примеру</a> из интернета.</p>
-    <p style="color: rgb(204, 122, 0); font-weight: 600;">- Моя собственная попытка, прежде чем я собрал решение №2 с примера: <a href="https://jsfiddle.net/Georka/3gtmw8p4/3/" target="_blank">тут</a> на jsfiddle</p><br>
+    <p style="color: rgb(19, 167, 0); font-weight: 600;">Переход осуществляется с помощью клика, с одного на другой кружок.</p><br>
     <div class="traffics">
-        <fieldset class="manual"><legend>Переход с помощью клика</legend>
-            <div class="manualTraffic">
-                <div id="manualGreen"></div>
-                <div id="manualYellow"></div>
-                <div id="manualRed"></div>
-            </div>
-            <fieldset><legend>JS</legend>
-                <p>const manualGreen = document.querySelector('#manualGreen');</p>
-                <p>const manualYellow = document.querySelector('#manualYellow');</p>
-                <p>const manualRed = document.querySelector('#manualRed');</p>
-                <br>
-                <p>function mBgGreen() {</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('green');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('black');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('black');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.removeEventListener('click', mBgGreen);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.addEventListener('click', mBgYellow);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.addEventListener('click', mBgRed);</p>
-                    <p>}</p>
-                <p>manualGreen.addEventListener('click', mBgGreen);</p>
-                <br>
-                <p>function mBgYellow(){</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('black');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('yellow');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('black');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.removeEventListener('click', mBgYellow);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.addEventListener('click', mBgRed);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.addEventListener('click', mBgGreen);</p>
+        <div class="manualTraffic">
+            <div id="manualGreen"></div>
+            <div id="manualYellow"></div>
+            <div id="manualRed"></div>
+        </div>
+        <fieldset><legend>JS</legend>
+            <p>const manualGreen = document.querySelector('#manualGreen');</p>
+            <p>const manualYellow = document.querySelector('#manualYellow');</p>
+            <p>const manualRed = document.querySelector('#manualRed');</p>
+            <br>
+            <p>function mBgGreen() {</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('green');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.removeEventListener('click', mBgGreen);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.addEventListener('click', mBgYellow);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.addEventListener('click', mBgRed);</p>
                 <p>}</p>
-                <p>manualYellow.addEventListener('click', mBgYellow);</p>
-                <br>
-                <p>function mBgRed(){</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('black');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('black');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('red');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.removeEventListener('click', mBgRed);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.addEventListener('click', mBgGreen);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.addEventListener('click', mBgYellow);</p>
-                <p>}</p>
-                <p>manualRed.addEventListener('click', mBgRed);</p>
-            </fieldset>
+            <p>manualGreen.addEventListener('click', mBgGreen);</p>
+            <br>
+            <p>function mBgYellow(){</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('yellow');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.removeEventListener('click', mBgYellow);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.addEventListener('click', mBgRed);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.addEventListener('click', mBgGreen);</p>
+            <p>}</p>
+            <p>manualYellow.addEventListener('click', mBgYellow);</p>
+            <br>
+            <p>function mBgRed(){</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('red');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.removeEventListener('click', mBgRed);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.addEventListener('click', mBgGreen);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.addEventListener('click', mBgYellow);</p>
+            <p>}</p>
+            <p>manualRed.addEventListener('click', mBgRed);</p>
         </fieldset>
+        <!--
         <fieldset class="auto"><legend>Переход автоматически по таймеру</legend>
             <div class="autoTraffic">
                 <div class="autoGreen"></div>
@@ -92,7 +88,7 @@
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;counter = (counter + 1) % timers.length;</p>
                 <p>}</p>
             </fieldset>
-        </fieldset>
+        </fieldset>-->
     </div>
     <script src="script.js"></script>
 </body>

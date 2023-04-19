@@ -24,7 +24,8 @@
     width: 50%;
 }
 .traffics fieldset {
-    display: flex;
+    display: block;
+    width: 100%;
     position: relative;
 }
 .traffics fieldset div {margin-top: 10px;}
