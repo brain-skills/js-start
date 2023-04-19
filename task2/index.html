@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>JS-Start. 2 задача</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicons/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <h1>Задание 6.8.3 — Подсказка</h1>
+    <h2>Содержание:</h2>
+    <ul>
+        <li><a href="../index.html">Задание 6.8.1 — Стартовая страница</a></li>
+        <li><a href="../task1/index.html">Задание 6.8.2 — Привет, мир!</a></li>
+        <li><a href="index.html" class="active">Задание 6.8.3 — Подсказка</a></li>
+        <li><a href="../task3/index.html">Задание 6.8.4 — Светофор</a></li>
+        <li><a href="../task4/index.html">Задание 6.8.5 — Ввод текста</a></li>
+        <li><a href="../task5/index.html">Задание 6.8.6 — Перехват формы</a></li>
+    </ul>
+    <hr><br>
+    <p id="consoleLog">console.log &nbsp;&nbsp; // (нажми на меня)</p>
+    <fieldset><legend>JS</legend>
+        <p>document.querySelector('#consoleLog').onclick = function() {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Метод для вывода сообщения в веб консоль, после нажатия на эллемент c id="consoleLog"');</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;alert('Метод для вывода сообщения в веб консоль, после нажатия на эллемент c id="consoleLog"');</p>
+        <p>};</p>
+    </fieldset>
+    <p id="alert">Alert() &nbsp;&nbsp; // (нажми на меня)</p>
+    <fieldset><legend>JS</legend>
+        <p>document.querySelector('#alert').onclick = function() {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;alert('Пример использования alert, после нажатия на эллемент c id="alert"');</p>
+        <p>};</p>
+    </fieldset>
+    <p id="prompt">Prompt() &nbsp;&nbsp; // (нажми на меня)</p>
+    <fieldset><legend>JS</legend>
+        <p>const promptTag = document.querySelector('#prompt');</p>
+        <p>promptTag.onclick = function() {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;const promptValue = prompt('Напишите любой текст и нажмите ОК чтобы увидеть его в консоли');</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;console.log(Вы ввели текст: ', promptValue ,'- в prompt окне!);</p>
+        <p>};</p>
+    </fieldset>
+    <script src="script.js"></script>
+</body>
+</html>

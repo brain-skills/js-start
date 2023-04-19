@@ -1,0 +1,10 @@
+body {margin:0; padding:20px;}
+h1{margin: 0 0 20px 0; border: 1px solid #222; border-radius: 6px; padding: 5px 10px;}
+ul {list-style-type: none; padding:0; margin:0;}
+li {margin: 10px 0;}
+a:hover {color: red !important;}
+a:visited {color: blue;}
+.active {color: red !important;}
+fieldset {display: block; padding: 5px 10px; border: 1px solid #bbb; margin-top: 10px;}
+fieldset p{margin: 0;border-bottom: none;cursor: inherit;}
+p {margin: 10px 0;width: max-content;padding-bottom: 2px;cursor: pointer;border-bottom: 1px dashed blue;}
