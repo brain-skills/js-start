@@ -3,7 +3,7 @@
     height: 80px;
     border-radius: 50%;
     background: black;
-    margin: 10px;
+    margin: 10px !important;
 }
 .traffics {
     width: 100%;
@@ -11,14 +11,14 @@
     position: relative;
 }
 .traffics fieldset {
-    max-height: 400px !important;
+    max-height: 330px !important;
     width: 50%;
 }
 .traffics fieldset {
     display: flex;
     position: relative;
 }
-.traffics fieldset div {top: 25px;position: relative;}
+.traffics fieldset div {margin-top: 10px;}
 .traffics fieldset fieldset {
     display: block;
     width: 100%;
