@@ -1,23 +1,19 @@
-.traffics div div {
+.traffic div {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     background: black;
     margin: 10px !important;
 }
-.traffics div .autoGreen.on {
-    background: green;
-}
-.traffics div .autoYellow.on {
-    background: yellow;
-}
-.traffics div .autoRed.on {
-    background: red;
-}
 .traffics {
     width: 100%;
     display: flex;
     position: relative;
+}
+.traffic {
+    top: 50px;
+    position: relative;
+    height: 280px;
 }
 .traffics fieldset {
     max-height: 330px !important;

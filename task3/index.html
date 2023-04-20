@@ -23,72 +23,46 @@
     <hr><br>
     <p style="color: rgb(19, 167, 0); font-weight: 600;">Переход осуществляется с помощью клика, с одного на другой кружок.</p><br>
     <div class="traffics">
-        <div class="manualTraffic">
-            <div id="manualGreen"></div>
-            <div id="manualYellow"></div>
-            <div id="manualRed"></div>
+        <div class="traffic">
+            <div id="green"></div>
+            <div id="yellow"></div>
+            <div id="red"></div>
         </div>
         <fieldset><legend>JS</legend>
-            <p>const manualGreen = document.querySelector('#manualGreen');</p>
-            <p>const manualYellow = document.querySelector('#manualYellow');</p>
-            <p>const manualRed = document.querySelector('#manualRed');</p>
+            <p>const green = document.querySelector('#green');</p>
+            <p>const yellow = document.querySelector('#yellow');</p>
+            <p>const red = document.querySelector('#red');</p>
             <br>
-            <p>function mBgGreen() {</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('green');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.removeEventListener('click', mBgGreen);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.addEventListener('click', mBgYellow);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.addEventListener('click', mBgRed);</p>
+            <p>function makeGreen() {</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.style.background = ('green');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.removeEventListener('click', makeGreen);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.addEventListener('click', makeYellow);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.addEventListener('click', makeRed);</p>
                 <p>}</p>
-            <p>manualGreen.addEventListener('click', mBgGreen);</p>
+            <p>green.addEventListener('click', makeGreen);</p>
             <br>
-            <p>function mBgYellow(){</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('yellow');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.removeEventListener('click', mBgYellow);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.addEventListener('click', mBgRed);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.addEventListener('click', mBgGreen);</p>
+            <p>function makeYellow(){</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.style.background = ('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.style.background=('yellow');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.removeEventListener('click', makeYellow);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.addEventListener('click', makeRed);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.addEventListener('click', makeGreen);</p>
             <p>}</p>
-            <p>manualYellow.addEventListener('click', mBgYellow);</p>
+            <p>yellow.addEventListener('click', makeYellow);</p>
             <br>
-            <p>function mBgRed(){</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.style.background = ('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.style.background=('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.style.background=('red');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualRed.removeEventListener('click', mBgRed);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualGreen.addEventListener('click', mBgGreen);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;manualYellow.addEventListener('click', mBgYellow);</p>
+            <p>function makeRed(){</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.style.background = ('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.style.background=('red');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.removeEventListener('click', makeRed);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.addEventListener('click', makeGreen);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.addEventListener('click', makeYellow);</p>
             <p>}</p>
-            <p>manualRed.addEventListener('click', mBgRed);</p>
+            <p>red.addEventListener('click', makeRed);</p>
         </fieldset>
-        <!--
-        <fieldset class="auto"><legend>Переход автоматически по таймеру</legend>
-            <div class="autoTraffic">
-                <div class="autoGreen"></div>
-                <div class="autoYellow"></div>
-                <div class="autoRed"></div>
-            </div>
-            <fieldset><legend>JS</legend>
-                <p>var autoTraffic = document.querySelectorAll('.autoTraffic > div'), timers = [1500, 1500, 1500], counter = 0;</p>
-
-                <p>document.addEventListener('load', start);</p>
-
-                <p>var start = setTimeout(function() {</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;traffic();</p>
-                <p>}, 100);</p>
-
-                <p>function traffic() {</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;for (var i=0; i < autoTraffic.length; i++) {</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoTraffic[i].classList.remove('on');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;autoTraffic[counter].classList.add('on');</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(traffic, timers[counter]);</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;counter = (counter + 1) % timers.length;</p>
-                <p>}</p>
-            </fieldset>
-        </fieldset>-->
     </div>
     <script src="script.js"></script>
 </body>
