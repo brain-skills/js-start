@@ -32,36 +32,29 @@
             <p>const green = document.querySelector('#green');</p>
             <p>const yellow = document.querySelector('#yellow');</p>
             <p>const red = document.querySelector('#red');</p>
-            <br>
+            <p>const wrapper = document.querySelector('#wrapper');</p>
+
             <p>function makeGreen() {</p>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;green.style.background = ('green');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.style.background=('black');</p>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;red.style.background=('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.removeEventListener('click', makeGreen);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.addEventListener('click', makeYellow);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.addEventListener('click', makeRed);</p>
-                <p>}</p>
-            <p>green.addEventListener('click', makeGreen);</p>
-            <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;wrapper.addEventListener('click', makeYellow);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;wrapper.removeEventListener('click', makeRed);</p>
+            <p>}</p>
+            <p>wrapper.addEventListener('click', makeGreen);</p>
+
             <p>function makeYellow(){</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.style.background = ('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.style.background=('yellow');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.style.background=('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.removeEventListener('click', makeYellow);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.addEventListener('click', makeRed);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.addEventListener('click', makeGreen);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.style.background = ('yellow');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.style.background=('black');</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;wrapper.addEventListener('click', makeRed);</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;wrapper.removeEventListener('click', makeGreen);</p>
             <p>}</p>
-            <p>yellow.addEventListener('click', makeYellow);</p>
-            <br>
+
             <p>function makeRed(){</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.style.background = ('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.style.background=('black');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.style.background=('red');</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;red.removeEventListener('click', makeRed);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;green.addEventListener('click', makeGreen);</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.addEventListener('click', makeYellow);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;red.style.background = ('red');</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;yellow.style.background=('black');</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;wrapper.addEventListener('click', makeGreen);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;wrapper.removeEventListener('click', makeYellow);</p>
             <p>}</p>
-            <p>red.addEventListener('click', makeRed);</p>
         </fieldset>
     </div>
     <script src="script.js"></script>
